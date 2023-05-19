@@ -28,7 +28,7 @@ function numHabitaciones(pacientes, capacidad) {
   if (pacientes <= capacidad){
     return 1;
   }
-  return numHabitaciones(pacientes - capacidad, capacidad) + 1;
+  return  1 + numHabitaciones(pacientes - capacidad, capacidad);
     
 }
 

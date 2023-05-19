@@ -23,6 +23,18 @@ REQUISITOS
 
 LinkedList.prototype.pacientesConMasDeUnaEnfermedad = function (lista) {
   // Tu código aquí:
+  
+  var newLista = new LinkedList();
+  var current = this.head;
+
+  while(current !== null){
+    if(current.value.enfermedad.length > 1){
+      newLista.add(current.value);}
+      current = current.next;
+  }
+
+  return newLista;
+  
 };
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
