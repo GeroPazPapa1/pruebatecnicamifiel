@@ -54,7 +54,7 @@ function henryHospital(lista) {
     let enEsperaQueue = new Queue();
   
     while (lista.array.length > 0) {
-      let paciente = lista.queue.dequeue();
+      let paciente = lista.dequeue();
   
       if (paciente.edad >= 18 && paciente.altura > 150) {
         atendidasQueue.enqueue(paciente);

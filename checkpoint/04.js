@@ -17,16 +17,17 @@ REQUISITOS
 🟢 Puedes utilizar un default parameter para ayudarte.
 */
 
-function contarPacientes(pacientes) {
+function contarPacientes(pacientes, contador = 0) {
   // Tu código aquí:
   
     if (pacientes.length === 0) {
       return "No hay pacientes en la planta";
-    } else {
-      pacientes.shift();
-      const cantidadDePacientes = 1 + contarPacientes(pacientes);
-      return "La cantidad de pacientes en la planta son: ${cantidadDePacientes}";
+    } 
+    if (pacientes.length === 1){
+      return `La cantidad de pacientes en la planta son: ${contador + 1}`;
     }
+    return contarPacientes(pacientes.slice(1), contador + 1);
+
 }
 
 
