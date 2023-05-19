@@ -32,7 +32,16 @@ REQUISITOS
 
 BinarySearchTree.prototype.buscandoAlDoctor = function (id) {
   // Tu código aquí:
-};
+  
+  if(this.value.id === id) return this;
+  else if(this.left && id < this.value.id ){
+    return this.left.buscandoAlDoctor(id);
+  }
+  else if(this.right && id > this.value.id ){
+    return this.right.buscandoAlDoctor(id);
+  }
+  return null;
+}
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = BinarySearchTree;

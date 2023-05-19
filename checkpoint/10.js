@@ -30,6 +30,30 @@ string: "No se puede agregar el mismo empleado".
 
 BinarySearchTree.prototype.agregarEmpleado = function (empleado) {
   // Tu código aquí:
+
+  var newNode = new BinarySearchTree(empleado);
+  
+  if (this.value.años === empleado.años && this.value.nombre === empleado.nombre){
+    return "No se puede agregar el mismo empleado";
+  }
+  if (empleado.años < this.value.años){
+    if (this.left){
+      this.left.agregarEmpleado(empleado); 
+    }
+    else {
+      this.left = newNode;
+      return newNode;
+    }
+  }
+   else {
+    if (this.right){
+      this.right.agregarEmpleado(empleado);
+    }
+    else {
+      this.right = newNode;
+      return newNode;
+   }
+  }
 };
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
