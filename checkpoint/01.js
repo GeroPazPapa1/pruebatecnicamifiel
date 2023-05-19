@@ -50,7 +50,22 @@ REQUISITOS
 
 function henryHospital(lista) {
   // Tu código aquí:
+    let atendidasQueue = new Queue();
+    let enEsperaQueue = new Queue();
+  
+    while (lista.array.length > 0) {
+      let paciente = lista.queue.dequeue();
+  
+      if (paciente.edad >= 18 && paciente.altura > 150) {
+        atendidasQueue.enqueue(paciente);
+      } else {
+        enEsperaQueue.enqueue(paciente);
+      }
+    }
+  var objeto = {Atendidas: atendidasQueue, EnEspera: enEsperaQueue}
+  return objeto;
 }
+
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = {

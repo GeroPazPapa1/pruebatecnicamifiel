@@ -20,7 +20,30 @@
 
 function BuscandoError(expresion) {
   // Tu código aquí
+    const pila = [];
+    const pares = {
+      '{': '}',
+      '[': ']',
+      '(': ')'
+    };
+  
+    for (let i = 0; i < expresion.length; i++) {
+      const char = expresion.charAt(i);
+      if (char === '{' || char === '[' || char === '(') {
+        pila.push(char);
+      } else if (char === '}' || char === ']' || char === ')') {
+        if (pila.length === 0) {
+          return false;
+        }
+        const ultimoAbierto = pila.pop();
+        if (pares[ultimoAbierto] !== char) {
+          return false;
+        }
+      }
+    }
+  return pila.length === 0;
 }
+
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = {

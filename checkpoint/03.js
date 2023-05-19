@@ -15,7 +15,15 @@ REQUISITOS
 
 function sumarCostos(precio) {
   // Tu código aquí:
+  return function(numero) {
+      if (precio === 0) {
+        return false;
+      }
+      return precio + numero;
+    };
 }
+  
+
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = {
