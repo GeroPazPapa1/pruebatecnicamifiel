@@ -27,6 +27,23 @@ REQUISITOS:
 
 LinkedList.prototype.pacienteEnMayorEspera = function () {
   // Tu código aquí
+  
+  if (!this.head) return null;
+  
+  let aux = this.head;
+  let tiempoMax = aux.value.espera
+  let pacientMayor = aux.value
+
+  while (aux.next) {
+    aux = aux.next
+    if (aux.value.espera > tiempoMax) {
+      tiempoMax = aux.value.espera;
+      pacientMayor = aux.value;
+    }
+  }
+  
+  return pacientMayor;
+ 
 };
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
