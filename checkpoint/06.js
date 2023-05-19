@@ -22,7 +22,16 @@ REQUISITOS
 
 function numHabitaciones(pacientes, capacidad) {
   // Tu código aquí:
+   if (pacientes === 0) {
+      return 0;
+    }
+  if (pacientes <= capacidad){
+    return 1;
+  }
+  return numHabitaciones(pacientes - capacidad, capacidad) + 1;
+    
 }
+
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = numHabitaciones;

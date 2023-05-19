@@ -23,7 +23,7 @@ function ordenarInstrumentos(instrumentos) {
     }
   
     if (instrumentos.length === 0) {
-      return "El array no debe estar vacío";
+      return "El array no debe estar vacio";
     }
   
     const instruOrdenado = instrumentos.slice();
