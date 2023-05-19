@@ -19,7 +19,22 @@ REQUISITOS
 
 function contarPacientes(pacientes) {
   // Tu código aquí:
+  
+    if (pacientes.length === 0) {
+      return "No hay pacientes en la planta";
+    } else {
+      pacientes.shift();
+      const cantidadDePacientes = 1 + contarPacientes(pacientes);
+      return "La cantidad de pacientes en la planta son: ${cantidadDePacientes}";
+    }
 }
+
+
+
+  
+
+
+
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = {
